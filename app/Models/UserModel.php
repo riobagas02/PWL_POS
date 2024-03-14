@@ -9,8 +9,10 @@ class UserModel extends Model
 {
     use HasFactory;
 
+    // Jobsheet 3
     protected $table = 'm_user'; 
     protected $primaryKey = 'user_id'; 
 
+    // Jobsheet 4
     protected $fillable = ['level_id', 'username', 'nama']; 
 }
