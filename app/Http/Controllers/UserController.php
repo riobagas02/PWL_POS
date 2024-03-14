@@ -47,17 +47,28 @@ use Illuminate\Support\Facades\Hash;
 // }
 
 // Jobsheet 4-Praktikum 2.1 
+// class UserController extends Controller
+// {
+//     public function index()
+//     {
+//         // $user = UserModel::where('level_id', 1)->first();
+//         // $user = UserModel::firstwhere('level_id', 1);
+//         // $user = UserModel::findOr(1, ['username', 'nama'], function (){
+//         // });
+//         $user = UserModel::findOr(20, ['username', 'nama'], function (){
+//         });
+        
+//         return view('user', ['data' => $user]);
+//     }
+// }
+
 class UserController extends Controller
 {
     public function index()
     {
-        // $user = UserModel::where('level_id', 1)->first();
-        // $user = UserModel::firstwhere('level_id', 1);
-        // $user = UserModel::findOr(1, ['username', 'nama'], function (){
-        // });
-        $user = UserModel::findOr(20, ['username', 'nama'], function (){
-        });
-        
+        // $user = UserModel::findOrfail(1);
+        $user = UserModel::where('username', 'manager9')->firstOrFail();
+
         return view('user', ['data' => $user]);
     }
 }
