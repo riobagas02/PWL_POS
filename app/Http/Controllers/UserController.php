@@ -62,16 +62,30 @@ use Illuminate\Support\Facades\Hash;
 //     }
 // }
 
+// Jobsheet 4-Praktikum 2.2
+// class UserController extends Controller
+// {
+//     public function index()
+//     {
+//         // $user = UserModel::findOrfail(1);
+//         $user = UserModel::where('username', 'manager9')->firstOrFail();
+
+//         return view('user', ['data' => $user]);
+//     }
+// }
+
+// Jobsheet 4-Praktikum 2.3
 class UserController extends Controller
 {
     public function index()
     {
-        // $user = UserModel::findOrfail(1);
-        $user = UserModel::where('username', 'manager9')->firstOrFail();
+        $user = UserModel::where('level_id', 2)->count();
+        // dd($user);
 
-        return view('user', ['data' => $user]);
+        return view('user', ['userCount' => $user]);
     }
 }
+
 
 // Jobsheet 4-Praktikum 1
 // class UserController extends Controller
