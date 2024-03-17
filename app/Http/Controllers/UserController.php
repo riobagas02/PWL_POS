@@ -9,30 +9,45 @@ use Illuminate\Support\Facades\Hash;
 // Jobsheet 3
 // class UserController extends Controller
 // {
+    // public function index()
+    // {
+    //     $data = [
+    //         //Jobsheet 3
+    //         'username' => 'customer-1',
+    //         'nama' => 'Pelanggan',
+    //         'password' => Hash::make('12345'),
+    //         'level_id' => 4
+    //     ];
+        
+    //     UserModel::insert($data);
+
+    //     $user = UserModel::all();
+    //     return view('user', ['data' => $user]); 
+
+
+        //Jobsheet 4
+        // UserModel::create($data);
+        // Praktikum 3
+        // UserModel::where('username', 'customer-1') -> update($data);
+
+           
+//     }
+// }   
+
+// class UserController extends Controller
+// {
 //     public function index()
 //     {
 //         $data = [
 //             //Jobsheet 3
-//             // 'username' => 'customer-1',
-//             // 'nama' => 'Pelanggan',
-//             // 'password' => Hash::make('12345'),
-//             // 'level_id' => 4
-
-//             // 'nama' => 'Pelanggan Pertama',
-
-//             //Jobsheet 4
-//             'level_id' => 2,
-//             'username' => 'manager_tiga',
-//             'nama' => 'Manager 3',
-//             'password' => Hash::make('12345')
+//             'nama' => 'Pelanggan Pertama',
 //         ];
-//         //Jobsheet 4
-//         UserModel::create($data);
-//         // Praktikum 3
-//         // UserModel::where('username', 'customer-1') -> update($data);
-
+//         UserModel::where('username', 'customer-1') -> update($data);
+        
 //         $user = UserModel::all();
-//         return view('user', ['data' => $user]);    
+//         return view('user', ['data' => $user]); 
+    
+           
 //     }
 // }   
 
@@ -75,31 +90,77 @@ use Illuminate\Support\Facades\Hash;
 // }
 
 // Jobsheet 4-Praktikum 2.3
-class UserController extends Controller
-{
-    public function index()
-    {
-        $user = UserModel::where('level_id', 2)->count();
-        // dd($user);
+// class UserController extends Controller
+// {
+//     public function index()
+//     {
+//         $user = UserModel::where('level_id', 2)->count();
+//         // dd($user);
 
-        return view('user', ['userCount' => $user]);
-    }
-}
+//         return view('user', ['userCount' => $user]);
+//     }
+// }
 
 
-// Jobsheet 4-Praktikum 1
+// Jobsheet 4-Praktikum 2.4
 // class UserController extends Controller
 // {
 //     public function index()
 //     {
 //         $user = UserModel::firstOrCreate(
 //             [
-//                 'username' => 'manager22',
-//                 'nama' => 'Manager Dua DUa',
-//                 'password' => Hash::make('12345'),
-//                 'level_id' => 2
+//                 'username'  => 'manager22',
+//                 'nama'      => 'Manager Dua Dua',
+//                 'password'  => Hash::make('12345'),
+//                 'level_id'  => 2
 //             ],
 //         );
 //         return view('user', ['data' => $user]);
 //     }
 // }
+// class UserController extends Controller
+// {
+//     public function index()
+//     {
+//             $user = UserModel::firstOrCreate([
+//                 'username' => 'customer-1',
+//                 'nama' => 'Pelanggan Pertama',
+//                 'password' => Hash::make('12345'),
+//                 'level_id' => 4
+//             ],
+//         );
+//         return view('user', ['data' => $user]);
+//     }
+// }
+
+// class UserController extends Controller
+// {
+//     public function index()
+//     {
+//         $user = UserModel::firstOrCreate(
+//             [
+//                 'username'  => 'manager',
+//                 'nama'      => 'Manager',
+//             ],
+//         );
+//         return view('user', ['data' => $user]);
+//     }
+// }
+
+class UserController extends Controller
+{
+    public function index()
+    {
+        $user = UserModel::firstOrCreate(
+            [
+                'username' => 'manager33',
+                'nama' => 'Manager Tiga Tiga',
+                'password' => Hash::make('12345'),
+                'level_id' => 2
+            ],
+        );
+        $user->save();
+
+        return view('user', ['data' => $user]);
+    }
+}
