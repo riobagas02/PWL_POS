@@ -78,16 +78,16 @@ use Illuminate\Support\Facades\Hash;
 // }
 
 // Jobsheet 4-Praktikum 2.2
-// class UserController extends Controller
-// {
-//     public function index()
-//     {
-//         // $user = UserModel::findOrfail(1);
-//         $user = UserModel::where('username', 'manager9')->firstOrFail();
+class UserController extends Controller
+{
+    public function index()
+    {
+        $user = UserModel::findOrfail(1);
+        $user = UserModel::where('username', 'manager9')->firstOrFail();
 
-//         return view('user', ['data' => $user]);
-//     }
-// }
+        return view('user', ['data' => $user]);
+    }
+}
 
 // Jobsheet 4-Praktikum 2.3
 // class UserController extends Controller
@@ -166,16 +166,16 @@ use Illuminate\Support\Facades\Hash;
 // }
 
 // Praktikum 2.5
-// class UserController extends Controller
-// {
-//     public function index()
-//     {
-//         $user = UserModel::create([
-//             'username'  => 'manager55',
-//             'nama'      => 'Manager55',
-//             'password'  => Hash::make('12345'),
-//             'level_id'  => 2,
-//         ]);
+class UserController extends Controller
+{
+    public function index()
+    {
+        $user = UserModel::create([
+            'username'  => 'manager55',
+            'nama'      => 'Manager55',
+            'password'  => Hash::make('12345'),
+            'level_id'  => 2,
+        ]);
 
 //         $user->username = 'manager56';
 
